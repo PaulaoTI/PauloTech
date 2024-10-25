@@ -11,19 +11,10 @@
         body {
             background-color: rgb(56, 56, 56);
             display: flex;
+            flex-direction: column; /* Mudando para coluna para melhor responsividade */
             margin: 0;
             height: 100vh;
             overflow-x: hidden;
-        }
-
-        .container {
-            height: 45px;
-            width: 1366px;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: rgb(34, 34, 34);
-            border: 2px solid rgb(34, 34, 34);
         }
 
         .menu {
@@ -57,12 +48,12 @@
             position: fixed;
             left: -250px;
             top: 90px;
-            height: 100%;
-            width: 250px;
+            height: calc(100% - 90px); /* Ajustando para ocupar o restante da altura */
+            width: 240px;
             background-color: rgb(19, 18, 18);
             color: white;
             transition: left 0.3s ease;
-            padding: -5px;
+            padding: 5px; /* Corrigido para uma margem positiva */
             box-shadow: 2px 0 5px rgba(8, 8, 8, 0.699);
             font-size: 1.2rem;
         }
@@ -83,6 +74,69 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
+        .container {
+            height: 45px;
+            width: 100%; /* Mudado para 100% para responsividade */
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(34, 34, 34);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .Bt1, .Bt2, .Bt3, .Bt4, .Bt5, .Bt6, .Bt7 {
+            height: 30px;
+            width: 150px;
+            font-size: 15px;
+            background-color: rgb(34, 34, 34);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .Bt1:hover, .Bt2:hover, .Bt3:hover, .Bt4:hover, .Bt5:hover, .Bt6:hover, .Bt7:hover {
+            background-color: rgb(56, 56, 56);
+        }
+
+        .IntArt {
+            height: 400px;
+            width: 100%; /* Mudado para 100% para responsividade */
+            position: relative; /* Ajustado para relativo */
+            top: 90px; /* Para manter espaço para a barra lateral */
+            overflow: hidden;
+        }
+
+        .IntArt img {
+            height: 100%; /* Mantém a altura do contêiner */
+            width: 100%; /* Mantém a largura do contêiner */
+            object-fit: cover; /* Para manter a proporção */
+            transition: filter 0.3s ease;
+        }
+
+        .IntArt:hover img {
+            filter: brightness(90%);
+        }
+
+        .PauloTech {
+            color: rgb(122, 122, 122);
+            font-size: 20px;
+            position: absolute;
+            top: 640px; /* Pode ser ajustado se necessário */
+            left: 50%;
+            transform: translateX(-50%); /* Centraliza horizontalmente */
+        }
+
+        @media (max-width: 768px) {
+            .Bt1, .Bt2, .Bt3, .Bt4, .Bt5, .Bt6, .Bt7 {
+                width: 100%; /* Botões ocupam 100% da largura em telas menores */
+            }
+        }
+
         .profile-submenu {
             display: none;
             background-color: rgba(34, 34, 34, 0.8);
@@ -97,62 +151,30 @@
             color: white;
             font-size: 14px;
         }
-
-        .Bt1 {
-            height: 40px;
-            width: 100px;
-            position: absolute;
-            top: 40px;
-            left: 150px;
-            font-size: 15px;
-            background-color: rgb(34, 34, 34);
-        }
-
-        .Bt1:hover {
-            background-color: rgb(56, 56, 56);
-        }
-
-        .Bt2 {
-            height: 40px;
-            width: 100px;
-            position: absolute;
-            top: 40px;
-            left: 250px;
-            font-size: 15px;
-            background-color: rgb(34, 34, 34);
-        }
-
-        .Bt2:hover {
-            background-color: rgb(56, 56, 56);
-        }
-
-        .Bt3 {
-            height: 40px;
-            width: 100px;
-            position: absolute;
-            top: 40px;
-            left: 350px;
-            font-size: 15px;
-            background-color: rgb(34, 34, 34);
-        }
-
-        .Bt3:hover {
-            background-color: rgb(56, 56, 56);
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <button class="Bt1">Word</button>
-        <button class="Bt2">Excel</button>
-        <button class="Bt3">PowerPoint</button>
+        <a href="InteligenciaArtificial.html">
+            <button class="Bt1">Inteligência artificial</button>
+        </a>
+        <button class="Bt2">Informática</button>
+        <button class="Bt3">Programação</button>
+        <button class="Bt4">Redes</button>
+        <button class="Bt5">Seg. Info</button>
+        <button class="Bt6">Banco de dados</button>
+        <button class="Bt7">Cursos Gratuitos</button>
     </div>
     <div class="menu" id="menuToggle">
         <div class="menu-icon">☰</div>
         <div class="menu-text">Menu</div>
     </div>
-
+    <a href="melhoresIas.html">
+        <div class="IntArt">
+            <img src="img/cursos-IA.webp" alt="">
+        </div>
+    </a>
     <div class="sidebar" id="sidebar">
         <a href="#" id="profileLink">Seu perfil</a>
         <div class="profile-submenu" id="profileSubmenu">
@@ -163,8 +185,7 @@
         <a href="cadastro.html">Tela de cadastro</a>
         <a href="sobreMim.html">Sobre mim</a>
     </div>
-
-
+    <h1 class="PauloTech">@Paulo Tech</h1>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const nome = localStorage.getItem('nome');
