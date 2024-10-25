@@ -5,77 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/perfil.jpg" type="image/x-icon">
-    <title>Paulo Tech - sobre mim</title>
+    <title>Paulo Tech - Sobre Mim</title>
     <style>
-        .menu{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            height: 90px;
-            width: 1366px;
+        
+        body{
+            background-color: rgb(221, 218, 218);
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
             background-color: rgb(44, 44, 44);
             color: white;
-        }
-        h1{
-            color: white;
-            font-size: 25px;
-        }
-        .dados {
-            position: absolute;
-            top: 100px;
-            left: 5px;
-            height: 360px;
-            width: 500px;
-            font-size: 15px;
-            border-radius: 5px;
-            background-color: rgb(77, 77, 77);
-            border: 3px solid rgb(248, 1, 1);
-            color: rgb(255, 245, 245);
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        h1{
-            color: rgb(0, 0, 0);
+
+        .menu .title {
             position: absolute;
-            top: 120px;
-            left: 550px;
-        }  
-        .title{
-            color: white;
-            font-size: 30px;
-            position: absolute;
-            top: 10px;
-            left: 520px;
-        } 
-        button{
+            top: -10px;
+            left: 600px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        /* Botão de voltar */
+        .menu button {
             height: 40px;
             width: 100px;
+            position: absolute;
+            top: 20px;
+            left: 1250px;
             background-color: rgb(44, 44, 44);
             color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .menu button:hover {
+            background-color: rgb(20, 20, 20);
+        }
+
+        /* Estilos da seção de informações */
+        .dados {
+            margin-top: 100px;
+            max-width: 600px;
+            background-color: rgb(100, 100, 100);
+            color: rgb(253, 251, 251);
+            font-size: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid rgb(0, 0, 0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .dados h2 {
+            margin: 10px 0;
+        }
+
+        /* Estilos da mensagem de agradecimento */
+        .mensagem {
+            color: rgb(0, 0, 0);
             font-size: 20px;
-            position: absolute;
-            top: 45px;
-            left: 10px;
+            margin-top: 30px;
+            text-align: center;
+            max-width: 800px;
+            line-height: 1.5;
+            margin: 0 auto;
         }
-        button:hover {
-            background-color: rgb(94, 92, 92);
-            color: white;
-        }
+
     </style>
 </head>
 <body>
     <div class="menu">
-        <h2 class="title">Seja muito bem vindo!</h2>
+        <h2 class="title">Paulo Tech</h2>
         <a href="index.html"><button>Voltar</button></a>
     </div>
+
     <div class="dados">
         <h2>Desenvolvedor: Paulo César Martins Silva</h2>
         <h2>Idade atual: 20 anos</h2>
-        <h2>Cidade natal: Goiânia(GO)</h2>
+        <h2>Cidade natal: Goiânia (GO)</h2>
         <h2>Cargo: Universitário TI</h2>
-        <h2>Rede social: @_paulao20_</h2>
+        <h2>Instagram: @_paulao20_</h2>
     </div>
-    <h1>Estou muito grato e sastifeito por ter sua presença nesse site. <br> Garanto a você que ao sair daqui vai  obter os melhores<br> conhecimentos sobre tecnologia, que vai ser fundamental<br> pra usar em seu cotidiano nas melhores necessidades.
-    </h1>
+
+    <div class="mensagem">
+        <h1>Estou muito feliz pela sua presença!</h1>
+        <p>O Paulo Tech é um site totalmente desenvolvido para garantir que ao sair daqui você obterá os melhores conhecimentos sobre tecnologia, essenciais para aplicá-los no seu dia a dia e nas necessidades mais relevantes.</p>
+    </div>
 </body>
 </html>
