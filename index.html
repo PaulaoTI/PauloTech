@@ -9,7 +9,7 @@
     <title>Paulo Tech - Tela Principal</title>
     <style>
         body {
-            background-color: rgb(56, 56, 56);
+            background-color: rgb(121, 44, 245);
             display: flex;
             flex-direction: column; /* Mudando para coluna para melhor responsividade */
             margin: 0;
@@ -47,7 +47,7 @@
         .sidebar {
             position: fixed;
             left: -250px;
-            top: 90px;
+            top: 89px;
             height: calc(100% - 90px); /* Ajustando para ocupar o restante da altura */
             width: 240px;
             background-color: rgb(19, 18, 18);
@@ -81,10 +81,12 @@
             top: 0;
             left: 0;
             background-color: rgb(34, 34, 34);
+            border: 2px solid rgb(34, 34, 34);
+            box-shadow: 2px 0 2px rgba(241, 241, 241, 0.671);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
         }
 
         .Bt1, .Bt2, .Bt3, .Bt4, .Bt5, .Bt6, .Bt7 {
@@ -103,31 +105,12 @@
             background-color: rgb(56, 56, 56);
         }
 
-        .IntArt {
-            height: 400px;
-            width: 100%; /* Mudado para 100% para responsividade */
-            position: relative; /* Ajustado para relativo */
-            top: 90px; /* Para manter espaço para a barra lateral */
-            overflow: hidden;
-        }
-
-        .IntArt img {
-            height: 100%; /* Mantém a altura do contêiner */
-            width: 100%; /* Mantém a largura do contêiner */
-            object-fit: cover; /* Para manter a proporção */
-            transition: filter 0.3s ease;
-        }
-
-        .IntArt:hover img {
-            filter: brightness(90%);
-        }
-
         .PauloTech {
-            color: rgb(122, 122, 122);
+            color: rgb(0, 0, 0);
             font-size: 20px;
             position: absolute;
             top: 640px; /* Pode ser ajustado se necessário */
-            left: 50%;
+            left: 45%;
             transform: translateX(-50%); /* Centraliza horizontalmente */
         }
 
@@ -182,11 +165,8 @@
         <div class="menu-icon">☰</div>
         <div class="menu-text">Menu</div>
     </div>
-    <a href="melhoresIas.html">
-        <div class="IntArt">
-            <img src="img/cursos-IA.webp" alt="">
-        </div>
-    </a>
+
+    <h1 class="PauloTech">@Paulo Tech</h1>
     <div class="sidebar" id="sidebar">
         <a href="#" id="profileLink">Seu perfil</a>
         <div class="profile-submenu" id="profileSubmenu">
@@ -197,7 +177,7 @@
         <a href="cadastro.html">Tela de cadastro</a>
         <a href="sobreMim.html">Sobre mim</a>
     </div>
-    <h1 class="PauloTech">@Paulo Tech</h1>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const nome = localStorage.getItem('nome');
