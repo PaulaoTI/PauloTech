@@ -12,9 +12,8 @@ body {
     border: 2px solid black;
     background: #818181;
     width: 300px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.795);
 }
 
 h1 {
