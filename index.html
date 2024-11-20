@@ -312,12 +312,14 @@
                 document.getElementById('profilePhone').textContent = `${telefone}`;
                 document.getElementById('profileEmail').textContent = `${email}`;
             } else {
-                document.getElementById('profileName').textContent = 'Nenhum dado encontrado';
+                document.getElementById('profileName').textContent = 'Nenhum nome encontrado';
+                document.getElementById('profilePhone').textContent = 'Nenhum telefone encontrado';
+                document.getElementById('profileEmail').textContent = 'Nenhum email encontrado';
             }
             
-            const editButton = document.getElementById('editButton'); // Seleciona o botão "Editar"
+            const editButton = document.getElementById('editButton');
             editButton.addEventListener('click', function () {
-                window.location.href = 'editar.html'; // Redireciona para editar.html
+                window.location.href = 'editar.html';
             });
         });
     </script>
