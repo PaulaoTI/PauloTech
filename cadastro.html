@@ -1,13 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Paulo Tech - Cadastro</title>
+    <link rel="shortcut icon" href="img/logoredonda.png" type="image/x-icon">
+    <title>Paulo Tech - Tela de cadastro</title>
+    <style>
+        .mylogo {
+            height: 250px;
+            width: 250px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+            position: absolute;
+            top: 90px;
+            left: 200px;
+        }
+
+        .container {
+            border: 2px solid #818181;
+            background: #818181;
+            width: 300px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.795);
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #494949;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #222222;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a5a5a5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        label {
+            color: white;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
 </head>
+
 <body>
+    <img src="img/mylogo.webp" class="mylogo" alt="mylogo">
     <div class="container">
         <h1>Cadastro</h1>
         <form id="cadastroForm">
@@ -16,20 +81,19 @@
 
             <label for="telefone">Telefone:</label><br>
             <input type="tel" id="telefone" name="telefone" required> <br><br>
-            
+
             <label for="email">E-mail:</label><br>
             <input type="email" id="email" name="email" required> <br><br>
 
-            <button type="submit">Cadastrar</button>
+            <button class="button" type="submit">Cadastrar</button>
         </form>
     </div>
     <script>
         const form = document.getElementById('cadastroForm');
-    
-        form.addEventListener('submit', function(event) {
+
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // Exibe um alerta informando que o cadastro foi realizado
             alert('Cadastro realizado com sucesso!');
 
             const nome = document.getElementById('nome').value;
@@ -40,9 +104,9 @@
             localStorage.setItem('telefone', telefone);
             localStorage.setItem('email', email);
 
-            // Redireciona para a página principal após o alerta
             window.location.href = 'index.html';
         });
     </script>
 </body>
+
 </html>
