@@ -40,23 +40,16 @@
             font-size: 24px;
         }
 
-        .menu-text {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
         .sidebar {
             position: fixed;
             left: -270px;
             top: 79px;
             height: calc(80% - 80px);
-            /* Ajustando para ocupar o restante da altura */
             width: 250px;
             background-color: rgb(19, 18, 18);
             color: white;
             transition: left 0.4s ease;
             padding: 5px;
-            /* Corrigido para uma margem positiva */
             box-shadow: 2px 0 5px rgba(8, 8, 8, 0.699);
             font-size: 1.2rem;
         }
@@ -206,12 +199,28 @@
         }
 
         .card .btn:hover {
+            transform: scale(1.2,1.2);
             background-color: rgb(80, 80, 80);
         }
 
         label {
             color: rgb(255, 255, 255);
             font-size: 15px;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            height: 30px;
+            width: 80px;
+            background-color: rgb(43, 43, 43);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 49px;
+            left: 0px;
+            bottom: 20%;
         }
     </style>
 </head>
@@ -241,11 +250,11 @@
         </a>
     </div>
     <div class="menu" id="menuToggle">
-        <div class="menu-icon">☰</div>
-        <div class="menu-text">Menu</div>
+        <div class="menu-icon" id="icon">⫶☰</div>
+        <div class="tooltip" id="tooltip">Menu</div>
     </div>
     <div class="sidebar" id="sidebar">
-        <a href="#" id="profileLink">Meu perfil</a>
+        <a href="" id="profileLink">Meu perfil</a>
         <div class="profile-submenu" id="profileSubmenu">
             <label>Nome</label>
             <p id="profileName"></p>
@@ -288,6 +297,22 @@
     </div>
 
     <script>
+
+        const icon = document.getElementById('icon');
+        const tooltip = document.getElementById('tooltip');
+
+        icon.addEventListener('mouseenter', () => {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        });
+    </script>
+
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const nome = localStorage.getItem('nome');
             const telefone = localStorage.getItem('telefone');
@@ -323,8 +348,6 @@
             e.preventDefault();
             profileSubmenu.style.display = profileSubmenu.style.display === 'block' ? 'none' : 'block';
         });
-
-
     </script>
 </body>
 
